@@ -8,10 +8,6 @@ resource "aws_vpc" "burgerroyale_vpc" {
   }
 }
 
-output "vpc_id" {
-  value = aws_vpc.burgerroyale_vpc.id
-}
-
 # Public subnets creation
 
 resource "aws_subnet" "burgerroyale_public_subnet_1" {
