@@ -69,4 +69,4 @@ jobs:
 
     - name: Export Terraform output
       run: |
-        echo "VPC_ID=$(terraform output -raw vpc_id)" >> $GITHUB_OUTPUT
+        echo "VPC_ID=$(terraform output -raw vpc_id)" >> $GITHUB_ENV
