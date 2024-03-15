@@ -26,6 +26,8 @@ jobs:
 
     - name: Setup Terraform CLI
       uses: hashicorp/setup-terraform@v2.0.2
+      with:
+        terraform_wrapper: false
 
     - name: Terraform init
       run: terraform init
@@ -64,3 +66,7 @@ jobs:
     - name: Terraform apply
       run: |     
         terraform apply -auto-approve -var="dbUserName=${{ secrets.DB_USER }}" -var="dbPassword=${{ secrets.DB_PASSWORD }}"
+
+    - name: Export Terraform output
+      run: |
+        echo "VPC_ID=$(terraform output -raw burgerRoyaleVpcId)" >> $GITHUB_OUTPUT
