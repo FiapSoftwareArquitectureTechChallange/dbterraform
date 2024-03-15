@@ -8,7 +8,7 @@ resource "aws_vpc" "burgerroyale_vpc" {
   }
 }
 
-output "burgerRoyaleVpcId" {
+output "vpc_id" {
   value = aws_vpc.burgerroyale_vpc.id
 }
 
