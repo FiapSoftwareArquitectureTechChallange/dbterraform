@@ -1,4 +1,4 @@
-# BurgerRoyale Auth Lambda
+# BurgerRoyale - Infra RDS e VPC
 
 Esse Terraform é responsável por criar a infraestrutura de Banco de Dados RDS e de uma VPC.
 

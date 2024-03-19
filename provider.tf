@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "burgerroyale-s3-bucket"
+    bucket = "${TERRAFORM_BUCKET_NAME}"
     key    = "burgerroyale-database.tfstate"
     region = "us-east-1"
   }

@@ -31,6 +31,12 @@ jobs:
     - name: Setup Terraform CLI
       uses: hashicorp/setup-terraform@v2.0.2
 
+    - name: Set S3 bucket name
+      env:
+        TERRAFORM_BUCKET_NAME: ${{ vars.TERRAFORM_BUCKET_NAME }}
+      run: |
+        sed -i 's|${TERRAFORM_BUCKET_NAME}|'"$TERRAFORM_BUCKET_NAME"'|g' provider.tf
+
     - name: Terraform init
       run: terraform init
       
@@ -61,6 +67,12 @@ jobs:
 
     - name: Setup Terraform CLI
       uses: hashicorp/setup-terraform@v2.0.2
+
+    - name: Set S3 bucket name
+      env:
+        TERRAFORM_BUCKET_NAME: ${{ vars.TERRAFORM_BUCKET_NAME }}
+      run: |
+        sed -i 's|${TERRAFORM_BUCKET_NAME}|'"$TERRAFORM_BUCKET_NAME"'|g' provider.tf
 
     - name: Terraform init
       run: terraform init
