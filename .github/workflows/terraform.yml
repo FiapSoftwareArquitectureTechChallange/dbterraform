@@ -33,7 +33,7 @@ jobs:
 
     - name: Set S3 bucket name
       env:
-        TERRAFORM_BUCKET_NAME: ${{ secrets.TERRAFORM_BUCKET_NAME }}
+        TERRAFORM_BUCKET_NAME: ${{ vars.TERRAFORM_BUCKET_NAME }}
       run: |
         sed -i 's|${TERRAFORM_BUCKET_NAME}|'"$TERRAFORM_BUCKET_NAME"'|g' provider.tf
 
@@ -70,7 +70,7 @@ jobs:
 
     - name: Set S3 bucket name
       env:
-        TERRAFORM_BUCKET_NAME: ${{ secrets.TERRAFORM_BUCKET_NAME }}
+        TERRAFORM_BUCKET_NAME: ${{ vars.TERRAFORM_BUCKET_NAME }}
       run: |
         sed -i 's|${TERRAFORM_BUCKET_NAME}|'"$TERRAFORM_BUCKET_NAME"'|g' provider.tf
 
