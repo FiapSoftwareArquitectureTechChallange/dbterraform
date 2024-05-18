@@ -25,6 +25,7 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ vars.AWS_REGION }}
+        aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
 
     - name: Setup Terraform CLI
       uses: hashicorp/setup-terraform@v2.0.2
@@ -61,6 +62,7 @@ jobs:
        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
        aws-region: ${{ vars.AWS_REGION }}
+       aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
 
     - name: Setup Terraform CLI
       uses: hashicorp/setup-terraform@v2.0.2
